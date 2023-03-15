@@ -33,6 +33,8 @@ module.exports = {
 	},
 	rules: {
 		// 0 false, 1 warn, 2 error
+		indent: [2, 'tab'], // indent는 tab으로 통일
+		'linebreak-style': [2, 'windows'], // CRLF
 		'import/no-extraneous-dependencies': ['error', {devDependencies: true}], // Dev Dependency lint 에러 끄기
 		'import/extensions': [
 			'error',
@@ -54,6 +56,9 @@ module.exports = {
 		'no-dupe-args': 2,
 		'no-dupe-keys': 2,
 		'no-unreachable': 2,
+		'no-unused-vars': 'warn', // 정의 후 사용하지 않은 변수는 경고만 하기
+		'no-use-before-define': 1, // 정의 전에 사용 금지
+		'no-param-reassign': 0, // 파라미터는 지역변수로 받아서 쓰라는 rule
 		'react/jsx-indent': [2, 'tab'], // jsx에서도 indent tab으로 통일
 		'react/jsx-key': 2,
 		'react/jsx-no-duplicate-props': 2,
