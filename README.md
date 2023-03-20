@@ -6,7 +6,7 @@
 - 빌드툴 : Vite v4.1.0
 - 패키지 관리 도구 : yarn
 - 언어 : JavaScript, TypeScript
-- 주요 라이브러리 : React, StoryBook, Emotion(Css)
+- 주요 라이브러리 : React, StoryBook, Emotion(Css), React-Query, Recoil
 
 ![](../header.png)
 
@@ -29,6 +29,7 @@ yarn add --dev @storybook/builder-vite
 > 
 > .storybook 폴더 생성 및 package.json dependency 및 스크립트 추가
 >
+>* ^6.5.16 버전 현재 React 18 지원 X => peer dependency 에러
 3. Emotion 설치(command)
 ```sh
 yarn add @emotion/styled @emotion/react emotion-reset
@@ -53,6 +54,10 @@ yarn add axios
 ```sh
 yarn add react-query
 ```
+8. Recoil 설치
+```sh
+yarn add recoil
+```
 
 
 ## 사용 예제
@@ -68,16 +73,6 @@ yarn storybook
 ```sh
 cd ~/IdeaProjects/yarn-vite-react-app/
 rm -rf node_modules
-```
-4. 
-
-## 개발 환경 설정
-
-모든 개발 의존성 설치 방법과 자동 테스트 슈트 실행 방법을 운영체제 별로 작성합니다.
-
-```sh
-make install
-npm test
 ```
 
 ## 업데이트 내역
@@ -101,15 +96,13 @@ npm test
 
 XYZ 라이센스를 준수하며 ``LICENSE``에서 자세한 정보를 확인할 수 있습니다.
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
+[//]: # ([https://github.com/yourname/github-link]&#40;https://github.com/dbader/&#41;)
 
-## 기여 방법
-
-1. (<https://github.com/yourname/yourproject/fork>)을 포크합니다.
-2. (`git checkout -b feature/fooBar`) 명령어로 새 브랜치를 만드세요.
-3. (`git commit -am 'Add some fooBar'`) 명령어로 커밋하세요.
-4. (`git push origin feature/fooBar`) 명령어로 브랜치에 푸시하세요.
-5. 풀리퀘스트를 보내주세요.
+[//]: # (1. &#40;<https://github.com/yourname/yourproject/fork>&#41;을 포크합니다.)
+[//]: # (2. &#40;`git checkout -b feature/fooBar`&#41; 명령어로 새 브랜치를 만드세요.)
+[//]: # (3. &#40;`git commit -am 'Add some fooBar'`&#41; 명령어로 커밋하세요.)
+[//]: # (4. &#40;`git push origin feature/fooBar`&#41; 명령어로 브랜치에 푸시하세요.)
+[//]: # (5. 풀리퀘스트를 보내주세요.)
 
 <!-- Markdown link & img dfn's -->
 [yarn-image]: https://img.shields.io/badge/yarn-1.22.19-orange
