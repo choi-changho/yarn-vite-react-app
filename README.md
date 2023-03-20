@@ -13,11 +13,9 @@
 ## 설치 방법
 
 1. 프로젝트 설치
-
 ```sh
 yarn create vite [프로젝트 명] --template react-ts
 ```
-
 2. 스토리북 설치:
 ```sh
 npx sb init --builder @storybook/builder-vite
@@ -34,7 +32,6 @@ yarn add --dev @storybook/builder-vite
 ```sh
 yarn add @emotion/styled @emotion/react emotion-reset
 ```
-
 4. Eslint / Prettier 설치
 ```sh
 yarn add -D eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks
@@ -46,15 +43,21 @@ yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 > 설정 및 인텔리제이 세팅 참고 자료
 > - https://minjung-jeon.github.io/eslint-prettier-intellij/
 > - https://min33sky.github.io/posts/paths-tsconfig-setting/
-6. axios 설치
+6. Lint Staged
+```sh
+yarn add -D lint-staged
+```
+> 설정 관련 참고 URL
+> - https://luniverse.io/2021/05/12/simple-git-hooks/?lang=ko
+7. axios 설치
 ```sh
 yarn add axios
 ```
-7. React Query 설치
+8. React Query 설치
 ```sh
 yarn add react-query
 ```
-8. Recoil 설치
+9. Recoil 설치
 ```sh
 yarn add recoil
 ```
