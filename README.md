@@ -8,7 +8,7 @@
 - 언어 : JavaScript, TypeScript
 - 주요 라이브러리 : React, StoryBook, Emotion(Css), React-Query, Recoil
 
-![](../header.png)
+[//]: # (![]&#40;../header.png&#41;)
 
 ## 설치 방법
 
@@ -60,6 +60,17 @@ yarn add react-query
 9. Recoil 설치
 ```sh
 yarn add recoil
+```
+10. React Router 설치
+```sh
+yarn add react-router-dom
+```
+11. MUI 설치
+```sh
+yarn add @mui/material @emotion/react @emotion/styled
+# MUI Default Font
+yarn add @fontsource/roboto 
+yarn add @mui/icons-material
 ```
 
 
