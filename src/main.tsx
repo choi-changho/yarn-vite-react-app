@@ -7,6 +7,8 @@ import {QueryClient, QueryClientProvider} from 'react-query';
 import {RecoilRoot} from 'recoil';
 import CharacterCounter from '@/component/counter/CharacterCounter';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import ToggleColorMode from '@/NewApp';
+import {CssBaseline} from '@mui/material';
 
 const router = createBrowserRouter([
 	{
@@ -21,6 +23,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 		<RecoilRoot>
 			<QueryClientProvider client={queryClient}>
 				<RouterProvider router={router}/>
+				<CssBaseline />
+				<ToggleColorMode/>
 				<App />
 				<UseQueryTest/>
 				<CharacterCounter/>

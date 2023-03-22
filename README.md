@@ -28,49 +28,50 @@ yarn add --dev @storybook/builder-vite
 > .storybook 폴더 생성 및 package.json dependency 및 스크립트 추가
 >
 >* ^6.5.16 버전 현재 React 18 지원 X => peer dependency 에러
-3. Emotion 설치(command)
-```sh
-yarn add @emotion/styled @emotion/react emotion-reset
-```
-4. Eslint / Prettier 설치
+3. Eslint / Prettier 설치
 ```sh
 yarn add -D eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks
 ```
-5. Typescript eslint 설치
+4. Typescript eslint 설치
 ```sh
 yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 > 설정 및 인텔리제이 세팅 참고 자료
 > - https://minjung-jeon.github.io/eslint-prettier-intellij/
 > - https://min33sky.github.io/posts/paths-tsconfig-setting/
-6. Lint Staged
+5. Lint Staged
 ```sh
 yarn add -D lint-staged
 ```
 > 설정 관련 참고 URL
 > - https://luniverse.io/2021/05/12/simple-git-hooks/?lang=ko
-7. axios 설치
+6. axios 설치
 ```sh
 yarn add axios
 ```
-8. React Query 설치
+7. React Query 설치
 ```sh
 yarn add react-query
 ```
-9. Recoil 설치
+8. Recoil 설치
 ```sh
 yarn add recoil
 ```
-10. React Router 설치
+9. React Router 설치
 ```sh
 yarn add react-router-dom
 ```
-11. MUI 설치
+10. MUI 설치
 ```sh
 yarn add @mui/material @emotion/react @emotion/styled
 # MUI Default Font
 yarn add @fontsource/roboto 
 yarn add @mui/icons-material
+```
+11. Lodash 설치치
+```sh
+yarn add lodash
+yarn add -D @types/lodash
 ```
 
 

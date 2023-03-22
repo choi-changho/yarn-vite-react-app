@@ -1,81 +1,165 @@
-import React from 'react';
+import {
+	AppBar,
+	Avatar,
+	Box,
+	Button,
+	Container,
+	IconButton,
+	Menu,
+	MenuItem,
+	Toolbar,
+	Tooltip,
+	Typography
+} from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
+import {Adb} from "@mui/icons-material";
+import {MouseEvent, useState} from 'react';
 
-import {Button} from '../button/Button';
-import './header.css';
+const pages = ['Products', 'Pricing', 'Blog'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-type User = {
-	name: string;
-};
+function Header() {
+	const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+	const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
-interface HeaderProps {
-	user?: User;
-	onLogin: () => void;
-	onLogout: () => void;
-	onCreateAccount: () => void;
-}
+	const handleOpenNavMenu = (event: MouseEvent<HTMLButtonElement>) => {
+		setAnchorElNav(event.currentTarget);
+	};
+	const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
+		setAnchorElUser(event.currentTarget);
+	};
 
-export function Header({
-	user,
-	onLogin,
-	onLogout,
-	onCreateAccount,
-}: HeaderProps) {
+	const handleCloseNavMenu = () => {
+		setAnchorElNav(null);
+	};
+
+	const handleCloseUserMenu = () => {
+		setAnchorElUser(null);
+	};
+
 	return (
-		<header>
-			<div className='wrapper'>
-				<div>
-					<svg
-						width='32'
-						height='32'
-						viewBox='0 0 32 32'
-						xmlns='http://www.w3.org/2000/svg'
+		<AppBar position="static">
+			<Container maxWidth="lg">
+				<Toolbar disableGutters>
+					<Adb sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+					<Typography
+						variant="h6"
+						noWrap
+						component="a"
+						href="/"
+						sx={{
+							mr: 2,
+							display: { xs: 'none', md: 'flex' },
+							fontFamily: 'monospace',
+							fontWeight: 700,
+							letterSpacing: '.3rem',
+							color: 'inherit',
+							textDecoration: 'none',
+						}}
 					>
-						<g fill='none' fillRule='evenodd'>
-							<path
-								d='M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z'
-								fill='#FFF'
-							/>
-							<path
-								d='M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z'
-								fill='#555AB9'
-							/>
-							<path
-								d='M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z'
-								fill='#91BAF8'
-							/>
-						</g>
-					</svg>
-					<h1>Acme</h1>
-				</div>
-				<div>
-					{user ? (
-						<>
-							<span className='welcome'>
-								Welcome, <b>{user.name}</b>!
-							</span>
+						LOGO
+					</Typography>
+
+					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+						<IconButton
+							size="large"
+							aria-label="account of current user"
+							aria-controls="menu-appbar"
+							aria-haspopup="true"
+							onClick={handleOpenNavMenu}
+							color="inherit"
+						>
+							<MenuIcon />
+						</IconButton>
+						<Menu
+							id="menu-appbar"
+							anchorEl={anchorElNav}
+							anchorOrigin={{
+								vertical: 'bottom',
+								horizontal: 'left',
+							}}
+							keepMounted
+							transformOrigin={{
+								vertical: 'top',
+								horizontal: 'left',
+							}}
+							open={Boolean(anchorElNav)}
+							onClose={handleCloseNavMenu}
+							sx={{
+								display: { xs: 'block', md: 'none' },
+							}}
+						>
+							{pages.map((page) => (
+								<MenuItem key={page} onClick={handleCloseNavMenu}>
+									<Typography textAlign="center">{page}</Typography>
+								</MenuItem>
+							))}
+						</Menu>
+					</Box>
+					<Adb sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+					<Typography
+						variant="h5"
+						noWrap
+						component="a"
+						href=""
+						sx={{
+							mr: 2,
+							display: { xs: 'flex', md: 'none' },
+							flexGrow: 1,
+							fontFamily: 'monospace',
+							fontWeight: 700,
+							letterSpacing: '.3rem',
+							color: 'inherit',
+							textDecoration: 'none',
+						}}
+					>
+						LOGO
+					</Typography>
+					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+						{pages.map((page) => (
 							<Button
-								size='small'
-								onClick={onLogout}
-								label='Log out'
-							/>
-						</>
-					) : (
-						<>
-							<Button
-								size='small'
-								onClick={onLogin}
-								label='Log in'
-							/>
-							<Button
-								primary
-								size='small'
-								onClick={onCreateAccount}
-								label='Sign up'
-							/>
-						</>
-					)}
-				</div>
-			</div>
-		</header>
+								key={page}
+								onClick={handleCloseNavMenu}
+								sx={{ my: 2, color: 'white', display: 'block' }}
+							>
+								{page}
+							</Button>
+						))}
+					</Box>
+
+					<Box sx={{ flexGrow: 0 }}>
+						<Tooltip title="Open settings">
+							<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+								<Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+							</IconButton>
+						</Tooltip>
+						<Menu
+							sx={{ mt: '45px' }}
+							id="menu-appbar"
+							anchorEl={anchorElUser}
+							anchorOrigin={{
+								vertical: 'top',
+								horizontal: 'right',
+							}}
+							keepMounted
+							transformOrigin={{
+								vertical: 'top',
+								horizontal: 'right',
+							}}
+							open={Boolean(anchorElUser)}
+							onClose={handleCloseUserMenu}
+						>
+							{settings.map((setting) => (
+								<MenuItem key={setting} onClick={handleCloseUserMenu}>
+									<Typography textAlign="center">{setting}</Typography>
+								</MenuItem>
+							))}
+						</Menu>
+					</Box>
+				</Toolbar>
+			</Container>
+		</AppBar>
 	);
 }
+
+export default Header;
