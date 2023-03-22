@@ -38,7 +38,7 @@ function Header() {
 	};
 
 	return (
-		<AppBar position="static">
+		<AppBar position="sticky" >
 			<Container maxWidth="lg">
 				<Toolbar disableGutters>
 					<Adb sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
