@@ -1,19 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import UseQueryTest from '@/UseQueryTest';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import {RecoilRoot} from 'recoil';
-import CharacterCounter from '@/component/counter/CharacterCounter';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import ToggleColorMode from '@/NewApp';
 import {CssBaseline} from '@mui/material';
+import App from '@/App';
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <ToggleColorMode/>,
-	}
-])
+// const router = createBrowserRouter([
+// 	{
+// 		path: '/',
+// 		element: <ToggleColorMode />,
+// 	},
+// ]);
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -21,12 +18,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 		<RecoilRoot>
 			<QueryClientProvider client={queryClient}>
 				<CssBaseline />
-				<RouterProvider router={router}/>
-				<UseQueryTest/>
-				<CharacterCounter/>
+				{/* <RouterProvider router={router}/> */}
+				<App />
 			</QueryClientProvider>
 		</RecoilRoot>
 	</React.StrictMode>
 );
-
-
