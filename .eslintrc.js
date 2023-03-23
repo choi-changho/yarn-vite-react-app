@@ -34,7 +34,7 @@ module.exports = {
 	rules: {
 		// 0 false, 1 warn, 2 error
 		indent: [2, 'tab'], // indent는 tab으로 통일
-		'linebreak-style': [2, 'windows'], // CRLF
+		'linebreak-style': [2, 'unix'], // LF
 		'import/no-extraneous-dependencies': ['error', {devDependencies: true}], // Dev Dependency lint 에러 끄기
 		'import/extensions': [
 			'error',
