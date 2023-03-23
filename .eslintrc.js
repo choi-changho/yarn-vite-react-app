@@ -33,7 +33,8 @@ module.exports = {
 	},
 	rules: {
 		// 0 false, 1 warn, 2 error
-		indent: [2, 'tab'], // indent는 tab으로 통일
+		'prettier/prettier': [2],
+		// indent: [2, 'tab'], // indent는 tab으로 통일
 		'linebreak-style': [2, 'unix'], // LF
 		'import/no-extraneous-dependencies': ['error', {devDependencies: true}], // Dev Dependency lint 에러 끄기
 		'import/extensions': [
@@ -48,7 +49,6 @@ module.exports = {
 			},
 		], // import 시 extensions 체크 에러 끄기
 		'import/prefer-default-export': 0, // 하나의 파일에서 단일로 export 하는 경우에 대한 경고 끄기
-		'prettier/prettier': 0, // prettier 에 대한 경고 끄기
 		'for-direction': 2, // for 루프가 무한대로 실행되는 것을 방지
 		'no-undef': 2,
 		'no-console': 2,

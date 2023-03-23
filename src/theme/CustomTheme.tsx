@@ -50,7 +50,6 @@ export default function CustomTheme() {
 
 	useEffect(() => {
 		setMode(prefersDarkMode);
-		const asd = '1';
 	}, [prefersDarkMode]);
 
 	return {customTheme, colorMode};

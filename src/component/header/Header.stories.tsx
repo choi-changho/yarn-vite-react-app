@@ -12,7 +12,9 @@ export default {
 	},
 } as ComponentMeta<typeof HeaderStory>;
 
-const Template: ComponentStory<typeof HeaderStory> = (args) => <HeaderStory {...args} />;
+const Template: ComponentStory<typeof HeaderStory> = (args) => (
+	<HeaderStory {...args} />
+);
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {

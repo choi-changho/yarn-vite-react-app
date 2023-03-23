@@ -3,7 +3,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import React from 'react';
 import Header from '@/component/header/Header';
 import Layout from '@/Layout';
-import {Box, IconButton, ThemeProvider, useTheme} from '@mui/material';
+import {Box, IconButton, ThemeProvider} from '@mui/material';
 import CustomTheme from '@/theme/CustomTheme';
 import UseQueryTest from '@/UseQueryTest';
 import CharacterCounter from '@/component/counter/CharacterCounter';
