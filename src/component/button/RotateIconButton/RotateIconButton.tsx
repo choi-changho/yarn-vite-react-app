@@ -1,16 +1,17 @@
 import {Fab, IconButton} from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import {createElement, ReactElement} from 'react';
+import {IconButtonProps} from '@mui/material/IconButton/IconButton';
 
-type RotateIconButtonType = {
+interface RotateIconButtonType extends IconButtonProps {
 	wrapperSize?: 'small' | 'medium' | 'large';
 	iconSize?: 'small' | 'medium' | 'large';
 	top?: string | number;
 	right?: string | number;
 	spinSec?: number;
-	icon: ReactElement;
+	icon?: ReactElement;
 	// Icon: SvgIconTypeMap;
-};
+}
 
 export default function RotateIconButton({
 	wrapperSize = 'medium',
@@ -19,6 +20,7 @@ export default function RotateIconButton({
 	right = '10px',
 	spinSec = 2,
 	icon = <SettingsIcon />,
+	...props
 }: RotateIconButtonType) {
 	return (
 		<Fab
@@ -34,6 +36,7 @@ export default function RotateIconButton({
 			}}
 		>
 			<IconButton
+				{...props}
 				sx={{
 					animation: `spin ${spinSec}s linear infinite`,
 					'@keyframes spin': {
