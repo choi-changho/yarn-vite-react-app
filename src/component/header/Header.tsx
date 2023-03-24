@@ -1,16 +1,4 @@
-import {
-	AppBar,
-	Avatar,
-	Box,
-	Button,
-	Container,
-	IconButton,
-	Menu,
-	MenuItem,
-	Toolbar,
-	Tooltip,
-	Typography,
-} from '@mui/material';
+import {AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {Adb} from '@mui/icons-material';
 import {MouseEvent, useState} from 'react';
@@ -61,14 +49,7 @@ function Header() {
 					</Typography>
 
 					<Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
-						<IconButton
-							size='large'
-							aria-label='account of current user'
-							aria-controls='menu-appbar'
-							aria-haspopup='true'
-							onClick={handleOpenNavMenu}
-							color='inherit'
-						>
+						<IconButton size='large' aria-label='account of current user' aria-controls='menu-appbar' aria-haspopup='true' onClick={handleOpenNavMenu} color='inherit'>
 							<MenuIcon />
 						</IconButton>
 						<Menu
@@ -117,11 +98,7 @@ function Header() {
 					</Typography>
 					<Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
 						{pages.map((page) => (
-							<Button
-								key={page}
-								onClick={handleCloseNavMenu}
-								sx={{my: 2, color: 'white', display: 'block'}}
-							>
+							<Button key={page} onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block'}}>
 								{page}
 							</Button>
 						))}

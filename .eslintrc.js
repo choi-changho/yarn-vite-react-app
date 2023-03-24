@@ -33,7 +33,7 @@ module.exports = {
 	},
 	rules: {
 		// 0 false, 1 warn, 2 error
-		'prettier/prettier': [2],
+		'prettier/prettier': [0],
 		// indent: [2, 'tab'], // indent는 tab으로 통일
 		'linebreak-style': [2, 'unix'], // LF
 		'import/no-extraneous-dependencies': ['error', {devDependencies: true}], // Dev Dependency lint 에러 끄기
