@@ -3,10 +3,9 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import React from 'react';
 import Header from '@/component/header/Header';
 import Layout from '@/Layout';
-import {Box, IconButton, ThemeProvider} from '@mui/material';
+import {Box, Fab, IconButton, ThemeProvider} from '@mui/material';
 import CustomTheme from '@/theme/CustomTheme';
-import UseQueryTest from '@/UseQueryTest';
-import CharacterCounter from '@/component/counter/CharacterCounter';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 export default function App() {
 	// const theme = useTheme();
@@ -27,22 +26,43 @@ export default function App() {
 				}}
 			>
 				{customTheme.palette.mode} mode
-				<IconButton
-					sx={{ml: 1}}
-					onClick={colorMode.toggleColorMode}
-					color='inherit'
-				>
-					{customTheme.palette.mode === 'dark' ? (
-						<Brightness7Icon />
-					) : (
-						<Brightness4Icon />
-					)}
+				<IconButton sx={{ml: 1}} onClick={colorMode.toggleColorMode} color='inherit'>
+					{customTheme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
 				</IconButton>
 			</Box>
 			<Header />
 			<Layout />
-			<UseQueryTest />
-			<CharacterCounter />
+			{/* <UseQueryTest /> */}
+			{/* <CharacterCounter /> */}
+			<Fab
+				size='medium'
+				color='secondary'
+				aria-label='Live Customize'
+				component='div'
+				sx={{
+					position: 'fixed',
+					top: '25%',
+					right: '10px',
+					zIndex: 1200,
+					borderRadius: '50% 50% 4px',
+				}}
+			>
+				<IconButton
+					sx={{
+						animation: 'spin 2s linear infinite',
+						'@keyframes spin': {
+							'0%': {
+								transform: 'rotate(360deg)',
+							},
+							'100%': {
+								transform: 'rotate(0deg)',
+							},
+						},
+					}}
+				>
+					<SettingsIcon />
+				</IconButton>
+			</Fab>
 		</ThemeProvider>
 	);
 }
