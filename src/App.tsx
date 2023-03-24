@@ -3,9 +3,9 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import React from 'react';
 import Header from '@/component/header/Header';
 import Layout from '@/Layout';
-import {Box, Fab, IconButton, ThemeProvider} from '@mui/material';
+import {Box, IconButton, ThemeProvider} from '@mui/material';
 import CustomTheme from '@/theme/CustomTheme';
-import SettingsIcon from '@mui/icons-material/Settings';
+import RotateIconButton from '@/component/button/RotateIconButton/RotateIconButton';
 
 export default function App() {
 	// const theme = useTheme();
@@ -34,35 +34,7 @@ export default function App() {
 			<Layout />
 			{/* <UseQueryTest /> */}
 			{/* <CharacterCounter /> */}
-			<Fab
-				size='medium'
-				color='secondary'
-				aria-label='Live Customize'
-				component='div'
-				sx={{
-					position: 'fixed',
-					top: '25%',
-					right: '10px',
-					zIndex: 1200,
-					borderRadius: '50% 50% 4px',
-				}}
-			>
-				<IconButton
-					sx={{
-						animation: 'spin 2s linear infinite',
-						'@keyframes spin': {
-							'0%': {
-								transform: 'rotate(360deg)',
-							},
-							'100%': {
-								transform: 'rotate(0deg)',
-							},
-						},
-					}}
-				>
-					<SettingsIcon />
-				</IconButton>
-			</Fab>
+			<RotateIconButton />
 		</ThemeProvider>
 	);
 }
