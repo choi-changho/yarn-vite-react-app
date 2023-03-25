@@ -1,62 +1,43 @@
-import {Fab, IconButton} from '@mui/material';
+import {IconButton} from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
-import {createElement, ReactElement} from 'react';
-import {IconButtonProps} from '@mui/material/IconButton/IconButton';
+import {createElement, MouseEventHandler, ReactElement} from 'react';
 
-interface RotateIconButtonType extends IconButtonProps {
-	wrapperSize?: 'small' | 'medium' | 'large';
+interface RotateIconButtonType {
 	iconSize?: 'small' | 'medium' | 'large';
-	top?: string | number;
-	right?: string | number;
 	spinSec?: number;
 	icon?: ReactElement;
-	// Icon: SvgIconTypeMap;
+	onClick?: MouseEventHandler;
 }
 
 export default function RotateIconButton({
-	wrapperSize = 'medium',
 	iconSize = 'medium',
-	top = '25%',
-	right = '10px',
 	spinSec = 2,
 	icon = <SettingsIcon />,
 	...props
 }: RotateIconButtonType) {
 	return (
-		<Fab
-			size={wrapperSize}
-			color='secondary'
-			aria-label='Live Customize'
-			component='div'
+		<IconButton
+			{...props}
 			sx={{
-				position: 'fixed',
-				top,
-				right,
-				borderRadius: '50% 50% 4px',
+				animation: `spin ${spinSec}s linear infinite`,
+				'@keyframes spin': {
+					'0%': {
+						transform: 'rotate(360deg)',
+					},
+					'100%': {
+						transform: 'rotate(0deg)',
+					},
+				},
 			}}
+			size={iconSize}
+			disableRipple
 		>
-			<IconButton
-				{...props}
-				sx={{
-					animation: `spin ${spinSec}s linear infinite`,
-					'@keyframes spin': {
-						'0%': {
-							transform: 'rotate(360deg)',
-						},
-						'100%': {
-							transform: 'rotate(0deg)',
-						},
-					},
-				}}
-				size={iconSize}
-			>
-				{createElement(icon?.type, {
-					...{
-						...icon?.props,
-						fontSize: 'inherit',
-					},
-				})}
-			</IconButton>
-		</Fab>
+			{createElement(icon?.type, {
+				...{
+					...icon?.props,
+					fontSize: 'inherit',
+				},
+			})}
+		</IconButton>
 	);
 }
