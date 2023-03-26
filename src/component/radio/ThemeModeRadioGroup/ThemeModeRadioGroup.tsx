@@ -3,7 +3,7 @@ import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from '@mui/
 import {useRecoilState} from 'recoil';
 import {appThemeMode} from '@/atom/global/appThemeMode';
 
-export default function ColorModeRadioGroup() {
+export default function ThemeModeRadioGroup() {
 	const [mode, setMode] = useRecoilState(appThemeMode);
 
 	return (

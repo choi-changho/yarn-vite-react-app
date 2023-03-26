@@ -4,7 +4,7 @@ import RotateIconButton from '@/component/button/RotateIconButton/RotateIconButt
 import SettingsIcon from '@mui/icons-material/Settings';
 import FloatingActionButton from '@/component/button/FloatingActionButton/FloatingActionButton';
 import Grid2 from '@mui/material/Unstable_Grid2';
-import ColorModeRadioGroup from '@/component/radio/ColorModeRadioGroup/ColorModeRadioGroup';
+import ThemeModeRadioGroup from '@/component/radio/ThemeModeRadioGroup/ThemeModeRadioGroup';
 
 export default function LiveCustomizeDrawer() {
 	const [open, setOpen] = useState(false);
@@ -20,7 +20,7 @@ export default function LiveCustomizeDrawer() {
 					<CardHeader title='Layout' titleTypographyProps={{variant: 'h5', component: 'h5'}} />
 					<Divider />
 					<CardContent>
-						<ColorModeRadioGroup />
+						<ThemeModeRadioGroup />
 					</CardContent>
 				</Card>
 			</Grid2>
