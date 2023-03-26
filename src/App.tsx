@@ -5,9 +5,8 @@ import Header from '@/component/header/Header';
 import Layout from '@/Layout';
 import {Box, IconButton, ThemeProvider} from '@mui/material';
 import CustomTheme from '@/theme/CustomTheme';
-import FloatingActionButton from '@/component/button/FloatingActionButton/FloatingActionButton';
-import RotateIconButton from '@/component/button/RotateIconButton/RotateIconButton';
-import SettingsIcon from '@mui/icons-material/Settings';
+import LiveCustomizeDrawer from '@/component/drawer/LiveCustomizeDrawer/LiveCustomizeDrawer';
+import Types from '@/component/types';
 
 export default function App() {
 	// const theme = useTheme();
@@ -36,9 +35,11 @@ export default function App() {
 			<Layout />
 			{/* <UseQueryTest /> */}
 			{/* <CharacterCounter /> */}
-			<FloatingActionButton>
-				<RotateIconButton icon={<SettingsIcon />} />
-			</FloatingActionButton>
+			{/* <FloatingActionButton> */}
+			{/* 	<RotateIconButton icon={<SettingsIcon />} /> */}
+			{/* </FloatingActionButton> */}
+			<LiveCustomizeDrawer />
+			<Types />
 		</ThemeProvider>
 	);
 }
