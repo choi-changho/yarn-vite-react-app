@@ -7,7 +7,7 @@ export default function ThemeModeRadioGroup() {
 	const [mode, setMode] = useRecoilState(appThemeMode);
 
 	return (
-		<FormControl>
+		<FormControl component='fieldset'>
 			<FormLabel color='primary' component='legend'>
 				Mode
 			</FormLabel>

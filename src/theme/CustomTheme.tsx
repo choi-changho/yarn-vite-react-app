@@ -10,8 +10,8 @@ export default function CustomTheme() {
 		() =>
 			createTheme({
 				typography: {
-					htmlFontSize: 14,
-					fontSize: 12,
+					htmlFontSize: 16,
+					fontSize: 14,
 					h1: {
 						fontSize: '2em',
 						fontWeight: 'bold',
@@ -35,6 +35,12 @@ export default function CustomTheme() {
 					h6: {
 						fontSize: '0.67em',
 						fontWeight: 'bold',
+					},
+					body1: {
+						fontSize: '0.83em',
+					},
+					body2: {
+						fontSize: '0.67em',
 					},
 				},
 				palette: {
@@ -61,6 +67,15 @@ export default function CustomTheme() {
 					// 				secondary: grey[500],
 					// 			},
 					// 	  }),
+				},
+				components: {
+					MuiFormLabel: {
+						styleOverrides: {
+							root: {
+								fontSize: '0.83em',
+							},
+						},
+					},
 				},
 			}),
 		[mode]
