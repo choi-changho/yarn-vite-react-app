@@ -30,12 +30,13 @@ export default function LiveCustomizeDrawer() {
 	);
 
 	return (
-		<div>
+		<>
 			<FloatingActionButton>
 				<RotateIconButton icon={<SettingsIcon />} onClick={() => toggleDrawer(true)} />
 			</FloatingActionButton>
 			<Drawer
 				open={open}
+				anchor='right'
 				onClose={() => toggleDrawer(false)}
 				PaperProps={{
 					sx: {width: 280, maxHeight: '100vh', overflow: 'auto'},
@@ -44,6 +45,6 @@ export default function LiveCustomizeDrawer() {
 			>
 				{list()}
 			</Drawer>
-		</div>
+		</>
 	);
 }

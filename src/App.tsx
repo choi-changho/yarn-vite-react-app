@@ -16,11 +16,6 @@ export default function App() {
 			<ThemeProvider theme={customTheme}>
 				<Header />
 				<Layout />
-				{/* <UseQueryTest /> */}
-				{/* <CharacterCounter /> */}
-				{/* <FloatingActionButton> */}
-				{/* 	<RotateIconButton icon={<SettingsIcon />} /> */}
-				{/* </FloatingActionButton> */}
 				<LiveCustomizeDrawer />
 				<Types />
 			</ThemeProvider>

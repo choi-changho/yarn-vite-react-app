@@ -11,14 +11,16 @@ export default function CustomTheme() {
 	const mode = useRecoilValue(AppThemeMode);
 	const direction = useRecoilValue(AppDirection);
 
-	const dirCache = useMemo(
-		() =>
-			createCache({
-				key: 'muirtl',
-				stylisPlugins: direction === 'rtl' ? [prefixer, stylisRTLPlugin] : [],
-			}),
-		[direction]
-	);
+	const cacheRtl = createCache({
+		key: 'mui-style-rtl',
+		stylisPlugins: [prefixer, stylisRTLPlugin],
+	});
+
+	const cacheLtr = createCache({
+		key: 'mui-style-ltr',
+	});
+
+	const dirCache = direction === 'rtl' ? cacheRtl : cacheLtr;
 
 	useEffect(() => {
 		document.dir = direction;
