@@ -1,10 +1,10 @@
 import React from 'react';
 import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from '@mui/material';
 import {useRecoilState} from 'recoil';
-import {appThemeMode} from '@/atom/global/appThemeMode';
+import {AppThemeMode} from '@/atom/global/AppThemeMode';
 
 export default function ThemeModeRadioGroup() {
-	const [mode, setMode] = useRecoilState(appThemeMode);
+	const [mode, setMode] = useRecoilState(AppThemeMode);
 
 	return (
 		<FormControl component='fieldset'>

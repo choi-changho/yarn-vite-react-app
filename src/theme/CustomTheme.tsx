@@ -1,14 +1,33 @@
 import {createTheme} from '@mui/material';
-import {useMemo} from 'react';
+import {useEffect, useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
-import {appThemeMode} from '@/atom/global/appThemeMode';
+import {AppThemeMode} from '@/atom/global/AppThemeMode';
+import {AppDirection} from '@/atom/global/AppDirection';
+import createCache from '@emotion/cache';
+import {prefixer} from 'stylis';
+import stylisRTLPlugin from 'stylis-plugin-rtl';
 
 export default function CustomTheme() {
-	const mode = useRecoilValue(appThemeMode);
+	const mode = useRecoilValue(AppThemeMode);
+	const direction = useRecoilValue(AppDirection);
+
+	const dirCache = useMemo(
+		() =>
+			createCache({
+				key: 'muirtl',
+				stylisPlugins: direction === 'rtl' ? [prefixer, stylisRTLPlugin] : [],
+			}),
+		[direction]
+	);
+
+	useEffect(() => {
+		document.dir = direction;
+	}, [direction]);
 
 	const customTheme = useMemo(
 		() =>
 			createTheme({
+				direction,
 				typography: {
 					htmlFontSize: 16,
 					fontSize: 14,
@@ -78,8 +97,8 @@ export default function CustomTheme() {
 					},
 				},
 			}),
-		[mode]
+		[mode, direction]
 	);
 
-	return {customTheme};
+	return {customTheme, dirCache};
 }

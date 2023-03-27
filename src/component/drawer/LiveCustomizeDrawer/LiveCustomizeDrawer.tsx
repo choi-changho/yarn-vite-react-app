@@ -5,6 +5,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import FloatingActionButton from '@/component/button/FloatingActionButton/FloatingActionButton';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import ThemeModeRadioGroup from '@/component/radio/ThemeModeRadioGroup/ThemeModeRadioGroup';
+import DirectionRadioGroup from '@/component/radio/DirectionRadioGroup/DirectionRadioGroup';
 
 export default function LiveCustomizeDrawer() {
 	const [open, setOpen] = useState(false);
@@ -21,6 +22,7 @@ export default function LiveCustomizeDrawer() {
 					<Divider />
 					<CardContent>
 						<ThemeModeRadioGroup />
+						<DirectionRadioGroup />
 					</CardContent>
 				</Card>
 			</Grid2>
@@ -33,7 +35,6 @@ export default function LiveCustomizeDrawer() {
 				<RotateIconButton icon={<SettingsIcon />} onClick={() => toggleDrawer(true)} />
 			</FloatingActionButton>
 			<Drawer
-				anchor='right'
 				open={open}
 				onClose={() => toggleDrawer(false)}
 				PaperProps={{

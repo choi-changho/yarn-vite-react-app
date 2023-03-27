@@ -1,9 +1,9 @@
-import {ThemeMode} from '@/types/global/ThemeMode';
 import {atom} from 'recoil';
+import {PaletteMode} from '@mui/material';
 
-let defaultTheme: ThemeMode = 'light';
+let defaultTheme: PaletteMode = 'light';
 if (typeof window !== 'undefined') {
-	const savedTheme: ThemeMode = window.localStorage.getItem('THEME_TUTORIAL') as 'light' | 'dark'; // save the users prefered mode
+	const savedTheme: PaletteMode = window.localStorage.getItem('THEME') as 'light' | 'dark'; // save the users prefered mode
 	if (savedTheme) {
 		defaultTheme = savedTheme;
 	} else {
@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
 	}
 }
 
-export const appThemeMode = atom<ThemeMode>({
-	key: 'theme',
+export const AppThemeMode = atom<PaletteMode>({
+	key: 'AppThemeMode',
 	default: defaultTheme,
 });
