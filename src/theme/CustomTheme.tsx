@@ -29,6 +29,9 @@ export default function CustomTheme() {
 	const customTheme = useMemo(
 		() =>
 			createTheme({
+				shape: {
+					borderRadius: 4,
+				},
 				direction,
 				typography: {
 					htmlFontSize: 16,

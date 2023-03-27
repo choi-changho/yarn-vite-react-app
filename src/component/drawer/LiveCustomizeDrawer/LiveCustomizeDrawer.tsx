@@ -17,7 +17,7 @@ export default function LiveCustomizeDrawer() {
 	const list = () => (
 		<Grid2 container display='flex' flexGrow='row wrap' marginTop='-24px' padding='24px' boxSizing='border-box'>
 			<Grid2 xs={12} paddingTop={3}>
-				<Card sx={{borderRadius: '8px'}}>
+				<Card>
 					<CardHeader title='Layout' titleTypographyProps={{variant: 'h5', component: 'h5'}} />
 					<Divider />
 					<CardContent>
