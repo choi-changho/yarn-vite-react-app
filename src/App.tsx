@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '@/component/header/Header';
 import Layout from '@/Layout';
-import {ThemeProvider} from '@mui/material';
+import {Avatar, ThemeProvider} from '@mui/material';
 import CustomTheme from '@/theme/CustomTheme';
 import LiveCustomizeDrawer from '@/component/drawer/LiveCustomizeDrawer/LiveCustomizeDrawer';
 import Types from '@/component/types';
 import {CacheProvider} from '@emotion/react';
-import BorderSlider from '@/component/slider/BorderSlider/BorderSlider';
+import {deepOrange, deepPurple} from '@mui/material/colors';
 
 export default function App() {
 	// const theme = useTheme();
@@ -18,7 +18,10 @@ export default function App() {
 				<Header />
 				<Layout />
 				<LiveCustomizeDrawer />
-				<BorderSlider />
+				<Avatar
+					sx={{background: `linear-gradient(135deg, ${deepOrange[500]} 50%, ${deepPurple[500]} 50%)`}}
+					variant='square'
+				/>
 				<Types />
 			</ThemeProvider>
 		</CacheProvider>
