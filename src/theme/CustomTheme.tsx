@@ -6,10 +6,12 @@ import {AppDirection} from '@/atom/global/AppDirection';
 import createCache from '@emotion/cache';
 import {prefixer} from 'stylis';
 import stylisRTLPlugin from 'stylis-plugin-rtl';
+import {AppBorderRadius} from '@/atom/global/AppBorderRadius';
 
 export default function CustomTheme() {
 	const mode = useRecoilValue(AppThemeMode);
 	const direction = useRecoilValue(AppDirection);
+	const borderRadius = useRecoilValue(AppBorderRadius);
 
 	const cacheRtl = createCache({
 		key: 'mui-style-rtl',
@@ -30,7 +32,7 @@ export default function CustomTheme() {
 		() =>
 			createTheme({
 				shape: {
-					borderRadius: 4,
+					borderRadius,
 				},
 				direction,
 				typography: {
@@ -102,7 +104,7 @@ export default function CustomTheme() {
 					},
 				},
 			}),
-		[mode, direction]
+		[mode, direction, borderRadius]
 	);
 
 	return {customTheme, dirCache};

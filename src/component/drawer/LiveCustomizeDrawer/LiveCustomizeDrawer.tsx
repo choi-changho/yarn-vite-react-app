@@ -6,6 +6,7 @@ import FloatingActionButton from '@/component/button/FloatingActionButton/Floati
 import Grid2 from '@mui/material/Unstable_Grid2';
 import ThemeModeRadioGroup from '@/component/radio/ThemeModeRadioGroup/ThemeModeRadioGroup';
 import DirectionRadioGroup from '@/component/radio/DirectionRadioGroup/DirectionRadioGroup';
+import BorderSlider from '@/component/slider/BorderSlider/BorderSlider';
 
 export default function LiveCustomizeDrawer() {
 	const [open, setOpen] = useState(false);
@@ -23,6 +24,15 @@ export default function LiveCustomizeDrawer() {
 					<CardContent>
 						<ThemeModeRadioGroup />
 						<DirectionRadioGroup />
+					</CardContent>
+				</Card>
+			</Grid2>
+			<Grid2 xs={12} paddingTop={3}>
+				<Card>
+					<CardHeader title='Border Radius' titleTypographyProps={{variant: 'h5', component: 'h5'}} />
+					<Divider />
+					<CardContent>
+						<BorderSlider />
 					</CardContent>
 				</Card>
 			</Grid2>

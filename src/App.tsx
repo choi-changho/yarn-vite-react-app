@@ -6,6 +6,7 @@ import CustomTheme from '@/theme/CustomTheme';
 import LiveCustomizeDrawer from '@/component/drawer/LiveCustomizeDrawer/LiveCustomizeDrawer';
 import Types from '@/component/types';
 import {CacheProvider} from '@emotion/react';
+import BorderSlider from '@/component/slider/BorderSlider/BorderSlider';
 
 export default function App() {
 	// const theme = useTheme();
@@ -17,6 +18,7 @@ export default function App() {
 				<Header />
 				<Layout />
 				<LiveCustomizeDrawer />
+				<BorderSlider />
 				<Types />
 			</ThemeProvider>
 		</CacheProvider>
