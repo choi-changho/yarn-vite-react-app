@@ -77,6 +77,7 @@ module.exports = {
 		'react/jsx-props-no-spreading': 1, // props로 받은 것 바로 props로 넘기기 허용
 		'react/function-component-definition': 0, // react 함수형 컴포넌트 정의 방식 선언
 		'react/no-unescaped-entities': 0, // react jsx 내 따옴표 escape 여부
+		'react/jsx-curly-brace-presence': [2, {props: 'never', children: 'ignore'}], // 중괄호 문자
 		// 'react/prop-types': 1,
 	},
 };
