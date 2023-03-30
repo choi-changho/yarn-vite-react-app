@@ -17,7 +17,7 @@ export default function BorderSlider() {
 				<Typography variant='h5'>4px</Typography>
 				<Slider
 					aria-label='Border Radius'
-					defaultValue={radius}
+					value={radius}
 					valueLabelDisplay='auto'
 					step={2}
 					marks
