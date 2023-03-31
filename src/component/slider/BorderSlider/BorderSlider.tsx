@@ -13,7 +13,7 @@ export default function BorderSlider() {
 
 	return (
 		<Grid2 spacing={2} xs={12}>
-			<Stack spacing={2} direction='row' sx={{mb: 1}} alignItems='center' width='100%'>
+			<Stack spacing={2} direction='row' alignItems='center' width='100%'>
 				<Typography variant='h5'>4px</Typography>
 				<Slider
 					aria-label='Border Radius'
