@@ -3,7 +3,7 @@ import {atom} from 'recoil';
 
 let defaultDir: Direction = 'ltr';
 if (typeof window !== 'undefined') {
-	const savedDir: Direction = window.localStorage.getItem('DIRECTION') as 'ltr' | 'rtl'; // save the users prefered mode
+	const savedDir: Direction = localStorage.getItem('DIRECTION') as 'ltr' | 'rtl'; // save the users prefered mode
 	if (savedDir) {
 		defaultDir = savedDir;
 	} else {

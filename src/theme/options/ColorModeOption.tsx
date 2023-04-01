@@ -1,35 +1,27 @@
 import {useRecoilValue} from 'recoil';
 import {AppThemeMode} from '@/atom/global/AppThemeMode';
 import {useMemo} from 'react';
-import {pink, red} from '@mui/material/colors';
+import {AppPreset} from '@/atom/global/AppPreset';
 
 export default function ColorModeOption() {
 	const mode = useRecoilValue(AppThemeMode);
+	const preset = useRecoilValue(AppPreset);
 
 	const colorTheme = useMemo(
 		() => ({
 			palette: {
 				mode,
-				...(mode === 'light'
-					? {
-							primary: {
-								main: red[700],
-							},
-							secondary: {
-								main: pink[200],
-							},
-					  }
-					: {
-							primary: {
-								main: red[700],
-							},
-							secondary: {
-								main: pink[200],
-							},
-					  }),
+				...{
+					primary: {
+						main: preset.mainColor,
+					},
+					secondary: {
+						main: preset.subColor,
+					},
+				},
 			},
 		}),
-		[mode]
+		[mode, preset]
 	);
 
 	return {colorTheme};

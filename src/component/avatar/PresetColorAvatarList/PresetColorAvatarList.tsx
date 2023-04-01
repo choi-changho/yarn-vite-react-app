@@ -1,30 +1,37 @@
 import Grid2 from '@mui/material/Unstable_Grid2';
 import PresetAvatar from '@/component/avatar/PresetAvatar';
 import {PresetData} from '@/data/PresetData';
-import {uniqueId} from 'lodash';
-import React, {useState} from 'react';
-import {presetType} from '@/types/global/PresetType';
+import {isEqual, uniqueId} from 'lodash';
+import React from 'react';
+import {PresetType} from '@/types/global/PresetType';
+import {useRecoilState} from 'recoil';
+import {AppPreset} from '@/atom/global/AppPreset';
 
 export default function PresetColorAvatarList() {
-	const [presets, setPresets] = useState(PresetData.presets);
+	const presetList = PresetData.presets;
+	const [preset, setPreset] = useRecoilState(AppPreset);
 
-	const onClickPreset = (preset: presetType, index: number) => {
-		const result = presets.map((values, pIdx) => ({...values, checked: pIdx === index}));
-		setPresets(result);
+	const onClickPreset = (obj: PresetType) => {
+		localStorage.setItem('PRESET', JSON.stringify(obj));
+		setPreset(obj);
+	};
+
+	const renderList = () => {
+		return presetList.map((obj) => (
+			<Grid2 key={uniqueId()}>
+				<PresetAvatar
+					mainColor={obj.mainColor}
+					subColor={obj.subColor}
+					checked={isEqual(obj, preset)}
+					onClick={() => onClickPreset(obj)}
+				/>
+			</Grid2>
+		));
 	};
 
 	return (
 		<Grid2 spacing={2} xs={12} container>
-			{presets.map((preset, index) => (
-				<Grid2 key={uniqueId()}>
-					<PresetAvatar
-						mainColor={preset.mainColor}
-						subColor={preset.subColor}
-						checked={preset.checked}
-						onClick={() => onClickPreset(preset, index)}
-					/>
-				</Grid2>
-			))}
+			{renderList()}
 		</Grid2>
 	);
 }
