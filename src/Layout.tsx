@@ -1,6 +1,9 @@
-import {Box, Paper, styled} from '@mui/material';
+import {Box, Paper, styled, useTheme} from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import {uniqueId} from 'lodash';
+import React from 'react';
+import MultiCarousel from '@/component/carousel/MultiCarousel';
+import {ProjectCareerData} from '@/data/ProjectCareerData';
 
 const Item = styled(Paper)(({theme}) => ({
 	backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -11,11 +14,21 @@ const Item = styled(Paper)(({theme}) => ({
 }));
 
 const Layout = () => {
+	const theme = useTheme();
+
+	const careerData = ProjectCareerData;
 	return (
-		<Box sx={{flexGrow: 1}}>
-			<Grid2 container columns={{xs: 4, sm: 8, md: 12}} height='100vh'>
+		<Box sx={{flexGrow: 1, backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff'}}>
+			<Grid2 container alignItems='center' justifyContent='center'>
+				<Grid2 container maxWidth='xl' mt={6} mb={6} xs={12}>
+					<MultiCarousel
+						headerTitle={careerData.headerTitle}
+						headerSubTitle={careerData.headerSubTitle}
+						carouselData={careerData.carouselData}
+					/>
+				</Grid2>
 				{Array.from(Array(6)).map(() => (
-					<Grid2 xs={4} sm={8} md={4} key={uniqueId()}>
+					<Grid2 xs={12} sm={12} md={12} lg={12} xl={12} key={uniqueId()}>
 						<Item>xs=12</Item>
 					</Grid2>
 				))}

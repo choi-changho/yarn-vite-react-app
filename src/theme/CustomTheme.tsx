@@ -26,19 +26,15 @@ export default function CustomTheme() {
 						},
 						h3: {
 							fontSize: '1.17em',
-							fontWeight: 'bold',
 						},
 						h4: {
 							fontSize: '1em',
-							fontWeight: 'bold',
 						},
 						h5: {
 							fontSize: '0.83em',
-							fontWeight: 'bold',
 						},
 						h6: {
 							fontSize: '0.67em',
-							fontWeight: 'bold',
 						},
 						body1: {
 							fontSize: '0.83em',
