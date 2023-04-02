@@ -106,6 +106,18 @@ yarn add stylis stylis-plugin-rtl @emotion/cache
 yarn add -D @types/stylis
 ```
 
+13. MUI 관련 컴포넌트 라이브러리 설치
+
+```sh
+yarn add react-material-ui-carousel
+```
+
+14. Vite 관련 플러그인 설치
+
+```sh
+yarn add -D vite-plugin-svgr
+```
+
 ## 사용 예제
 
 1. 개발계 실행
