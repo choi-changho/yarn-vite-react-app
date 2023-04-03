@@ -20,7 +20,7 @@ export default function MultiCarousel({headerTitle, headerSubTitle, carouselData
 	const createCarouselList = () =>
 		carouselData.map((carousel) => {
 			return (
-				<Grid2 container maxWidth='xl' xs={12} key={uniqueId()} height='40vh'>
+				<Grid2 container maxWidth='xl' xs={12} key={uniqueId()}>
 					<Grid2 xs={12} md={5} lg={5} xl={5}>
 						<Grid2 container>
 							<Grid2 xs={12}>
@@ -33,7 +33,7 @@ export default function MultiCarousel({headerTitle, headerSubTitle, carouselData
 									</Typography>
 								)}
 							</Grid2>
-							<Grid2 xs={12} pt={8}>
+							<Grid2 xs={12} pt={2}>
 								<Typography
 									variant='h3'
 									color={theme.palette.text.primary}
@@ -80,8 +80,8 @@ export default function MultiCarousel({headerTitle, headerSubTitle, carouselData
 					</Typography>
 				</Grid2>
 			</Grid2>
-			<Grid2 xs={12} pt={2} pb={2}>
-				<Carousel autoPlay={false} indicators={false} animation='slide' duration={1000}>
+			<Grid2 xs={12} pb={2}>
+				<Carousel autoPlay={false} indicators={false} animation='slide' duration={1000} sx={{overflowY: 'auto'}}>
 					{createCarouselList()}
 				</Carousel>
 			</Grid2>
