@@ -5,7 +5,7 @@ import {MailTwoTone, PhonelinkRingTwoTone, PinDropTwoTone} from '@mui/icons-mate
 export const ProfileData: ProfileType = {
 	avatarSrc: resumeImage,
 	title: '최창호',
-	subHeader: '1992.08.12',
+	subHeader: '풀스택 개발자',
 	content: [
 		{
 			icon: MailTwoTone,
@@ -20,7 +20,7 @@ export const ProfileData: ProfileType = {
 		{
 			icon: PinDropTwoTone,
 			text: 'Location',
-			value: '서울시 성북구 종암로 36길 41',
+			value: '서울 특별시',
 		},
 	],
 };
