@@ -1,40 +1,34 @@
-import {
-	AppBar,
-	Avatar,
-	Box,
-	Button,
-	Container,
-	IconButton,
-	Menu,
-	MenuItem,
-	Toolbar,
-	Tooltip,
-	Typography,
-} from '@mui/material';
+import {AppBar, Box, Button, Container, IconButton, Link, Menu, MenuItem, Toolbar, Typography} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {Adb} from '@mui/icons-material';
 import {MouseEvent, useState} from 'react';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [
+	{
+		name: 'Profile',
+		link: '#profile',
+		newTab: false,
+	},
+	{
+		name: 'Projects',
+		link: '#projects',
+		newTab: false,
+	},
+	{
+		name: 'Git',
+		link: 'https://github.com/choi-changho',
+		newTab: true,
+	},
+];
 
 function Header() {
 	const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-	const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
 	const handleOpenNavMenu = (event: MouseEvent<HTMLButtonElement>) => {
 		setAnchorElNav(event.currentTarget);
 	};
-	const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
-		setAnchorElUser(event.currentTarget);
-	};
-
 	const handleCloseNavMenu = () => {
 		setAnchorElNav(null);
-	};
-
-	const handleCloseUserMenu = () => {
-		setAnchorElUser(null);
 	};
 
 	return (
@@ -90,9 +84,15 @@ function Header() {
 							}}
 						>
 							{pages.map((page) => (
-								<MenuItem key={page} onClick={handleCloseNavMenu}>
-									<Typography textAlign='center' sx={{color: 'inherit'}}>
-										{page}
+								<MenuItem key={page.name} onClick={handleCloseNavMenu}>
+									<Typography
+										textAlign='center'
+										sx={{color: 'inherit'}}
+										component='a'
+										href={page.link}
+										target={page.newTab ? '_blank' : ''}
+									>
+										{page.name}
 									</Typography>
 								</MenuItem>
 							))}
@@ -119,40 +119,17 @@ function Header() {
 					</Typography>
 					<Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
 						{pages.map((page) => (
-							<Button key={page} onClick={handleCloseNavMenu} sx={{my: 2, color: 'inherit', display: 'block'}}>
-								{page}
+							<Button key={page.name} onClick={handleCloseNavMenu} sx={{my: 2, color: 'inherit', display: 'block'}}>
+								<Link
+									href={page.link}
+									underline='none'
+									sx={{color: 'inherit', display: 'block'}}
+									target={page.newTab ? '_blank' : ''}
+								>
+									{page.name}
+								</Link>
 							</Button>
 						))}
-					</Box>
-
-					<Box sx={{flexGrow: 0}}>
-						<Tooltip title='Open settings'>
-							<IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
-								<Avatar alt='Remy Sharp' src='/static/images/avatar/2.jpg' />
-							</IconButton>
-						</Tooltip>
-						<Menu
-							sx={{mt: '45px'}}
-							id='menu-appbar'
-							anchorEl={anchorElUser}
-							anchorOrigin={{
-								vertical: 'top',
-								horizontal: 'right',
-							}}
-							keepMounted
-							transformOrigin={{
-								vertical: 'top',
-								horizontal: 'right',
-							}}
-							open={Boolean(anchorElUser)}
-							onClose={handleCloseUserMenu}
-						>
-							{settings.map((setting) => (
-								<MenuItem key={setting} onClick={handleCloseUserMenu}>
-									<Typography textAlign='center'>{setting}</Typography>
-								</MenuItem>
-							))}
-						</Menu>
 					</Box>
 				</Toolbar>
 			</Container>
