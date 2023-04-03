@@ -8,7 +8,6 @@ import Types from '@/component/types';
 import {CacheProvider} from '@emotion/react';
 
 export default function App() {
-	// const theme = useTheme();
 	const {customTheme, dirCache} = CustomTheme();
 
 	return (

@@ -5,6 +5,7 @@ import Grid2 from '@mui/material/Unstable_Grid2';
 import Carousel from 'react-material-ui-carousel';
 import {CarouselIcon, MultiCarouselType} from '@/types/carousel/MultiCarouselType';
 import {uniqueId} from 'lodash';
+import CheckIcon from '@mui/icons-material/Check';
 
 export default function MultiCarousel({headerTitle, headerSubTitle, carouselData}: MultiCarouselType) {
 	const theme = useTheme();
@@ -16,6 +17,14 @@ export default function MultiCarousel({headerTitle, headerSubTitle, carouselData
 					{<icon.src />}
 				</Grid2>
 			</Tooltip>
+		));
+
+	const createDescription = (list: string[]) =>
+		list.map((des) => (
+			<Typography variant='h3' color={theme.palette.text.primary} whiteSpace='pre-wrap' lineHeight={2} key={uniqueId()}>
+				<CheckIcon color='secondary' />
+				{des}
+			</Typography>
 		));
 	const createCarouselList = () =>
 		carouselData.map((carousel) => {
@@ -33,16 +42,8 @@ export default function MultiCarousel({headerTitle, headerSubTitle, carouselData
 									</Typography>
 								)}
 							</Grid2>
-							<Grid2 xs={12} pt={2}>
-								<Typography
-									variant='h3'
-									color={theme.palette.text.primary}
-									textAlign='center'
-									whiteSpace='pre-wrap'
-									lineHeight={2}
-								>
-									{carousel.description}
-								</Typography>
+							<Grid2 xs={12} pt={5} pl={5}>
+								{createDescription(carousel.description)}
 							</Grid2>
 							{carousel.iconList && (
 								<Grid2 xs={12} pt={10} pl={2} pr={2} textAlign='center'>
@@ -57,11 +58,6 @@ export default function MultiCarousel({headerTitle, headerSubTitle, carouselData
 							image={carousel.image.src}
 							title={carousel.image.alt}
 						/>
-						{/* <img */}
-						{/* 	src={carousel.image.src} */}
-						{/* 	alt={carousel.image.alt} */}
-						{/* 	style={{width: '100%', height: '100%', objectFit: 'cover'}} */}
-						{/* /> */}
 					</Grid2>
 				</Grid2>
 			);
@@ -81,7 +77,7 @@ export default function MultiCarousel({headerTitle, headerSubTitle, carouselData
 				</Grid2>
 			</Grid2>
 			<Grid2 xs={12} pb={2}>
-				<Carousel autoPlay={false} indicators={false} animation='slide' duration={1000} sx={{overflowY: 'auto'}}>
+				<Carousel autoPlay={false} indicators={false} animation='slide' duration={1000}>
 					{createCarouselList()}
 				</Carousel>
 			</Grid2>

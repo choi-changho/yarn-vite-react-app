@@ -22,11 +22,12 @@ export const ProjectCareerData: MultiCarouselType = {
 		{
 			title: 'Pacs 시스템 신규 개발 및 유지보수',
 			subTitle: '(주)헬스허브 (2022.04 ~ 현재)',
-			description:
-				'1. 폴리머(Web Component) 에서 리엑트로 변환 작업\n' +
-				'2. 프로젝트 구성 빌드 툴 변경 (Webpack -> Vite)\n' +
-				'3. 리엑트 변환 중 Redux 적용\n' +
-				'4. 기타 유지보수 중 이슈 사항들 수정',
+			description: [
+				'폴리머(Web Component) 에서 리엑트로 변환 작업',
+				'프로젝트 구성 빌드 툴 변경 (Webpack -> Vite)',
+				'리엑트 변환 중 Redux 적용',
+				'기타 유지보수 중 이슈 사항들 수정',
+			],
 			image: {
 				src: HpacsImage,
 				alt: 'HPACS',
@@ -65,11 +66,12 @@ export const ProjectCareerData: MultiCarouselType = {
 		{
 			title: '삼성 반도체 사이트 개발',
 			subTitle: '(주)노스스타컨설팅 (2021.07 ~ 2022.02)',
-			description:
-				'1. 프로젝트 세팅 ( Maven, 개발 환경 세팅, 빌드 )\n' +
-				'2. 페이지 색인 데이터 CRUD\n' +
-				'3. HashTag 페이지 구성 컴포넌트 개발\n' +
-				'4. 제품 사양 컴포넌트 개발',
+			description: [
+				'프로젝트 세팅 ( Maven, 개발 환경 세팅, 빌드 )',
+				'페이지 색인 데이터 CRUD',
+				'HashTag 페이지 구성 컴포넌트 개발',
+				'제품 사양 컴포넌트 개발',
+			],
 			image: {
 				src: SemiImage,
 				alt: 'Samsung Semiconductor',
@@ -100,8 +102,7 @@ export const ProjectCareerData: MultiCarouselType = {
 		{
 			title: '현대글로비스 신사옥 스마트 워크스페이스',
 			subTitle: '(주)노스스타컨설팅 (2021.02 ~ 2021.04)',
-			// eslint-disable-next-line no-useless-concat
-			description: '1. Admin 페이지 관련 기능 및 화면 대다수 보완\n' + "2. '방문이력관리' 기능 개발\n",
+			description: ['Admin 페이지 관련 기능 및 화면 대다수 보완', "'방문이력관리' 기능 개발"],
 			image: {
 				src: NoImage,
 				alt: '현대 글로비스',
@@ -128,11 +129,12 @@ export const ProjectCareerData: MultiCarouselType = {
 		{
 			title: '삼성닷컴 P6 글로벌 사이트 개발',
 			subTitle: '(주)노스스타컨설팅 (2020.03 ~ 2020.12)',
-			description:
-				'1. 사용자가 최근에 보았던 제품 리스트 관리 컴포넌트 개발\n' +
-				'2. 제품 좋아요 기능 제품 관련 컴포넌트 추가\n' +
-				'3. 제품 리뷰 페이지 Third-party 리뷰 라이브러리 사용한 리뷰 컴포넌트 개발\n' +
-				'4. 사용자 마이페이지내 컴포넌트 개발',
+			description: [
+				'사용자가 최근에 보았던 제품 리스트 관리 컴포넌트 개발',
+				'제품 좋아요 기능 제품 관련 컴포넌트 추가',
+				'제품 리뷰 페이지 Third-party 리뷰 라이브러리 사용한 리뷰 컴포넌트 개발',
+				'사용자 마이페이지내 컴포넌트 개발',
+			],
 			image: {
 				src: P6Image,
 				alt: '삼성 전자',
@@ -164,10 +166,11 @@ export const ProjectCareerData: MultiCarouselType = {
 			title: '현대닷컴 HMC 운영',
 			subTitle: '(주)노스스타컨설팅 (2019.02 ~ 2019.12)',
 			// eslint-disable-next-line no-useless-concat
-			description:
-				'1. 마이페이지 현대 디지털 키 연동\n' +
-				'2. 블루멤버스 실 운행자 차량 등록 연동\n' +
-				'3. 지도 OPEN API Naver -> Kakao로 변경',
+			description: [
+				'마이페이지 현대 디지털 키 연동',
+				'블루멤버스 실 운행자 차량 등록 연동',
+				'지도 OPEN API Naver -> Kakao로 변경',
+			],
 			image: {
 				src: HyundaiImage,
 				alt: '현대 닷컴',

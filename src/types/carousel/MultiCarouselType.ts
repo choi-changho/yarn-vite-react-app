@@ -8,7 +8,7 @@ export type CarouselIcon = {
 export type CarouselDataType = {
 	title: string;
 	subTitle: string;
-	description: string;
+	description: string[];
 	image: ImageType;
 	iconList?: CarouselIcon[];
 };
