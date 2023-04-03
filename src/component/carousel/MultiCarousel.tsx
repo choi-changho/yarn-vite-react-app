@@ -6,6 +6,7 @@ import Carousel from 'react-material-ui-carousel';
 import {CarouselIcon, MultiCarouselType} from '@/types/carousel/MultiCarouselType';
 import {uniqueId} from 'lodash';
 import CheckIcon from '@mui/icons-material/Check';
+import GridCenterContainer from '@/component/container/GridCenterContainer';
 
 export default function MultiCarousel({headerTitle, headerSubTitle, carouselData}: MultiCarouselType) {
 	const theme = useTheme();
@@ -64,18 +65,7 @@ export default function MultiCarousel({headerTitle, headerSubTitle, carouselData
 		});
 	return (
 		<Grid2 container maxWidth='xl' xs={12} justifyContent='center'>
-			<Grid2 xs={12} textAlign='center'>
-				<Grid2 pb={2}>
-					<Typography variant='h1' color={theme.palette.text.primary}>
-						{headerTitle}
-					</Typography>
-				</Grid2>
-				<Grid2 pb={2}>
-					<Typography variant='h3' color={theme.palette.text.primary}>
-						{headerSubTitle}
-					</Typography>
-				</Grid2>
-			</Grid2>
+			<GridCenterContainer headerTitle={headerTitle} headerSubTitle={headerSubTitle} />
 			<Grid2 xs={12} pb={2}>
 				<Carousel autoPlay={false} indicators={false} animation='slide' duration={1000}>
 					{createCarouselList()}
