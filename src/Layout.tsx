@@ -18,7 +18,7 @@ const Layout = () => {
 				<Grid2 container maxWidth='xl' mt={6} mb={6} xs={12} spacing={5} pt={10} pb={5} id='profile'>
 					<Grid2 xs={12}>
 						<Typography variant='h1' color={theme.palette.text.primary} textAlign='center'>
-							'프로필'
+							프로필
 						</Typography>
 					</Grid2>
 					<Grid2 xs={4}>
