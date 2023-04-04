@@ -123,7 +123,7 @@ yarn add -D vite-plugin-svgr
 1. 개발계 실행
 
 ```sh
-yarn dev
+yarn && yarn dev
 ```
 
 2. Story Book 실행
