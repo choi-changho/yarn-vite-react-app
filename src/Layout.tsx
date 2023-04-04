@@ -6,7 +6,8 @@ import {ProjectCareerData} from '@/data/ProjectCareerData';
 import ProfileCard from '@/component/card/ProfileCard';
 import {ProfileData} from '@/data/ProfileData';
 import {TwoDepthsInfoCard} from '@/component/card/TwoDepthsInfoCard';
-import {ProfileInfoData} from '@/data/ProfileInfoData';
+import {CareerInfoData, EduInfoData, ProfileInfoData} from '@/data/ProfileInfoData';
+import OneDepthsInfoCard from '@/component/card/OneDepthsInfoCard';
 
 const Layout = () => {
 	const theme = useTheme();
@@ -37,6 +38,12 @@ const Layout = () => {
 									mainDescription={ProfileInfoData.mainDescription}
 									contents={ProfileInfoData.contents}
 								/>
+							</Grid2>
+							<Grid2 xs={12}>
+								<OneDepthsInfoCard title={EduInfoData.title} contents={EduInfoData.contents} />
+							</Grid2>
+							<Grid2 xs={12}>
+								<OneDepthsInfoCard title={CareerInfoData.title} contents={CareerInfoData.contents} />
 							</Grid2>
 						</Grid2>
 					</Grid2>
