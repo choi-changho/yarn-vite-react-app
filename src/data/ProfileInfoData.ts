@@ -1,4 +1,4 @@
-import {TwoDepthsInfoCardType} from '@/types/card/TwoDepthsInfoCard';
+import {TwoDepthsInfoCardType} from '@/component/card/TwoDepthsInfoCard';
 
 export const ProfileInfoData: TwoDepthsInfoCardType = {
 	mainTitle: '자기 소개',

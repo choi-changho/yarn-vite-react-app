@@ -5,7 +5,7 @@ import MultiCarousel from '@/component/carousel/MultiCarousel';
 import {ProjectCareerData} from '@/data/ProjectCareerData';
 import ProfileCard from '@/component/card/ProfileCard';
 import {ProfileData} from '@/data/ProfileData';
-import {TwoDepthsInfoCard} from '@/types/card/TwoDepthsInfoCard';
+import {TwoDepthsInfoCard} from '@/component/card/TwoDepthsInfoCard';
 import {ProfileInfoData} from '@/data/ProfileInfoData';
 
 const Layout = () => {
